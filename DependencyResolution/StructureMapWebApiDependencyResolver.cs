@@ -1,5 +1,5 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright file="StructureMapDependencyResolver.cs" company="Web Advanced">
+// <copyright file="StructureMapWebApiDependencyResolver.cs" company="Web Advanced">
 // Copyright 2012 Web Advanced (www.webadvanced.com)
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,17 +23,17 @@ namespace Manufacturing.DataCollector.DependencyResolution
     /// <summary>
     /// The structure map dependency resolver.
     /// </summary>
-    public class StructureMapDependencyResolver : StructureMapDependencyScope, IDependencyResolver
+    public class StructureMapWebApiDependencyResolver : StructureMapWebApiDependencyScope, IDependencyResolver
     {
         #region Constructors and Destructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="StructureMapDependencyResolver"/> class.
+        /// Initializes a new instance of the <see cref="StructureMapWebApiDependencyResolver"/> class.
         /// </summary>
         /// <param name="container">
         /// The container.
         /// </param>
-        public StructureMapDependencyResolver(IContainer container)
+        public StructureMapWebApiDependencyResolver(IContainer container)
             : base(container)
         {
         }
@@ -51,7 +51,7 @@ namespace Manufacturing.DataCollector.DependencyResolution
         public IDependencyScope BeginScope()
         {
             IContainer child = this.Container.GetNestedContainer();
-            return new StructureMapDependencyResolver(child);
+            return new StructureMapWebApiDependencyResolver(child);
         }
 
         #endregion

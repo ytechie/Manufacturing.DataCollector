@@ -35,92 +35,130 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bootstrapper">
-      <HintPath>..\packages\Bootstrapper.2.0.3.9\lib\Net40\Bootstrapper.dll</HintPath>
+      <HintPath>..\Manufacturing.DevRunner\packages\Bootstrapper.2.0.3.13\lib\Net40\Bootstrapper.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Bootstrapper.StructureMap, Version=2.0.3.10, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Bootstrapper.StructureMap.2.0.3.10\lib\Net40\Bootstrapper.StructureMap.dll</HintPath>
+    <Reference Include="Bootstrapper.StructureMap">
+      <HintPath>..\Manufacturing.DevRunner\packages\Bootstrapper.StructureMap.2.0.3.13\lib\Net40\Bootstrapper.StructureMap.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="CommonServiceLocator.StructureMapAdapter.Unofficial, Version=2.6.4.3, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\CommonServiceLocator.StructureMapAdapter.Unofficial.2.6.4.3\lib\Net40\CommonServiceLocator.StructureMapAdapter.Unofficial.dll</HintPath>
+    <Reference Include="CommonServiceLocator.StructureMapAdapter.Unofficial">
+      <HintPath>..\Manufacturing.DevRunner\packages\CommonServiceLocator.StructureMapAdapter.Unofficial.3.0.4.125\lib\Net40\CommonServiceLocator.StructureMapAdapter.Unofficial.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="log4net">
-      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+      <HintPath>..\Manufacturing.DevRunner\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Log4stuff.Appender">
-      <HintPath>..\packages\Log4stuff.Appender.1.0.0.0\lib\net45\Log4stuff.Appender.dll</HintPath>
+      <HintPath>..\Manufacturing.DevRunner\packages\Log4stuff.Appender.1.0.1.0\lib\net45\Log4stuff.Appender.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.ConventionConfiguration, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.ConventionConfiguration.1.0.5.0\lib\net45\Microsoft.ConventionConfiguration.dll</HintPath>
+    <Reference Include="Microsoft.ConventionConfiguration">
+      <HintPath>..\Manufacturing.DevRunner\packages\Microsoft.ConventionConfiguration.1.0.6.0\lib\net45\Microsoft.ConventionConfiguration.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.FluentMessaging, Version=1.0.10.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\FluentMessaging.1.0.10.0\lib\net45\Microsoft.FluentMessaging.dll</HintPath>
+    <Reference Include="Microsoft.FluentMessaging">
+      <HintPath>..\Manufacturing.DevRunner\packages\FluentMessaging.1.0.10.0\lib\net45\Microsoft.FluentMessaging.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Owin.Host.HttpListener, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.Owin.Host.HttpListener.2.1.0\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+    <Reference Include="Microsoft.Owin.Host.HttpListener">
+      <HintPath>..\Manufacturing.DevRunner\packages\Microsoft.Owin.Host.HttpListener.2.1.0\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation">
-      <HintPath>..\packages\CommonServiceLocator.1.2\lib\portable-windows8+net40+sl5+windowsphone8\Microsoft.Practices.ServiceLocation.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ServiceBus, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindowsAzure.ServiceBus.2.2.6.0\lib\net40-full\Microsoft.ServiceBus.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Manufacturing.DevRunner\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
       <Private>True</Private>
-      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.2.0.3\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    <Reference Include="Microsoft.ServiceBus">
+      <HintPath>..\Manufacturing.DevRunner\packages\WindowsAzure.ServiceBus.2.4.2.0\lib\net40-full\Microsoft.ServiceBus.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\Manufacturing.DevRunner\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration">
+      <HintPath>..\Manufacturing.DevRunner\packages\Microsoft.WindowsAzure.ConfigurationManager.2.0.3\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Manufacturing.DevRunner\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="StructureMap">
-      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+      <HintPath>..\Manufacturing.DevRunner\packages\structuremap.3.1.0.133\lib\net40\StructureMap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap.Net4">
+      <HintPath>..\Manufacturing.DevRunner\packages\structuremap.3.1.0.133\lib\net40\StructureMap.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap.Web">
+      <HintPath>..\Manufacturing.DevRunner\packages\structuremap.web.3.0.0.108\lib\net40\StructureMap.Web.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Messaging" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Net.Http.Formatting, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.1.1\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\Manufacturing.DevRunner\packages\Microsoft.AspNet.WebApi.Client.5.2.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Reactive.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Rx-Core.2.2.2\lib\net45\System.Reactive.Core.dll</HintPath>
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\Manufacturing.DevRunner\packages\Rx-Core.2.2.5\lib\net45\System.Reactive.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Reactive.Interfaces, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Rx-Interfaces.2.2.2\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\Manufacturing.DevRunner\packages\Rx-Interfaces.2.2.5\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Reactive.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Rx-Linq.2.2.2\lib\net45\System.Reactive.Linq.dll</HintPath>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\Manufacturing.DevRunner\packages\Rx-Linq.2.2.5\lib\net45\System.Reactive.Linq.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Reactive.PlatformServices, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Rx-PlatformServices.2.2.3\lib\net45\System.Reactive.PlatformServices.dll</HintPath>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\Manufacturing.DevRunner\packages\Rx-PlatformServices.2.2.5\lib\net45\System.Reactive.PlatformServices.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Http, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.1.1\lib\net45\System.Web.Http.dll</HintPath>
+      <HintPath>..\Manufacturing.DevRunner\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Http.SelfHost, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.SelfHost.5.1.1\lib\net45\System.Web.Http.SelfHost.dll</HintPath>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\Manufacturing.DevRunner\packages\Microsoft.AspNet.WebApi.Core.5.2.0\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.Http.WebHost, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.Http.SelfHost">
+      <HintPath>..\Manufacturing.DevRunner\packages\Microsoft.AspNet.WebApi.SelfHost.5.2.0\lib\net45\System.Web.Http.SelfHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\Manufacturing.DevRunner\packages\Microsoft.AspNet.WebApi.WebHost.5.2.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.1.1\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <HintPath>..\Manufacturing.DevRunner\packages\Microsoft.AspNet.Mvc.5.2.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Manufacturing.DevRunner\packages\Microsoft.AspNet.Razor.3.2.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Manufacturing.DevRunner\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Manufacturing.DevRunner\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Manufacturing.DevRunner\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -129,12 +167,18 @@
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml" />
     <Reference Include="WebActivator">
-      <HintPath>..\packages\WebActivator.1.5.3\lib\net40\WebActivator.dll</HintPath>
+      <HintPath>..\Manufacturing.DevRunner\packages\WebActivator.1.5.3\lib\net40\WebActivator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\Manufacturing.DevRunner\packages\WebActivatorEx.2.0.5\lib\net40\WebActivatorEx.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\ApiHost.cs" />
     <Compile Include="Api\ReceiverController.cs" />
+    <Compile Include="App_Start\StructuremapMvc.cs" />
+    <Compile Include="App_Start\StructuremapWebApi.cs" />
     <Compile Include="DataCollectorConfiguration.cs" />
     <Compile Include="DataCollectorContainer.cs" />
     <Compile Include="DatasourceAggregator.cs" />
@@ -142,8 +186,12 @@
     <Compile Include="Datasources\Simulation\CPUDatasource.cs" />
     <Compile Include="Datasources\Simulation\ItemLoadedDatasource.cs" />
     <Compile Include="Datasources\Simulation\RandomDatasource.cs" />
-    <Compile Include="DependencyResolution\StructureMapDependencyResolver.cs" />
+    <Compile Include="DependencyResolution\DefaultRegistry.cs" />
+    <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyScope.cs" />
+    <Compile Include="DependencyResolution\StructureMapScopeModule.cs" />
+    <Compile Include="DependencyResolution\StructureMapWebApiDependencyResolver.cs" />
+    <Compile Include="DependencyResolution\StructureMapWebApiDependencyScope.cs" />
     <Compile Include="ILocalRecordRepository.cs" />
     <Compile Include="MsmqRecordRepository.cs" />
     <Compile Include="Service1.cs">
@@ -163,10 +211,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Manufacturing.Framework.Dto\Manufacturing.Framework.Dto.csproj">
-      <Project>{32AEFB8C-211A-406C-B0EE-35A9219B1147}</Project>
-      <Name>Manufacturing.Framework.Dto</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Manufacturing.Framework\Manufacturing.Framework.csproj">
       <Project>{a8a3052b-3137-43e3-acdb-0a515f849e14}</Project>
       <Name>Manufacturing.Framework</Name>

@@ -32,7 +32,7 @@ namespace Manufacturing.DataCollector.Api
             // Set up server configuration
             var config = new HttpSelfHostConfiguration(baseAddress.Uri)
             {
-                DependencyResolver = new StructureMapDependencyResolver(_controllerResolver)
+                DependencyResolver = new StructureMapWebApiDependencyResolver(_controllerResolver)
             };
 
             //This tells it to use Unity to create the controllers

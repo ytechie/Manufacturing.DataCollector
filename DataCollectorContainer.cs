@@ -2,6 +2,8 @@
 using Bootstrap.StructureMap;
 using Manufacturing.Framework.Datasource;
 using StructureMap;
+using StructureMap.Graph;
+using StructureMap.Pipeline;
 
 namespace Manufacturing.DataCollector
 {
@@ -14,7 +16,7 @@ namespace Manufacturing.DataCollector
                 y.TheCallingAssembly();
                 y.ExcludeType<DatasourceAggregator>();
                 y.AddAllTypesOf<IDatasource>();
-                y.SingleImplementationsOfInterface().OnAddedPluginTypes(z => z.LifecycleIs(InstanceScope.Unique));
+                y.SingleImplementationsOfInterface().OnAddedPluginTypes(z => z.LifecycleIs(new TransientLifecycle()));
             }));
         }
 
