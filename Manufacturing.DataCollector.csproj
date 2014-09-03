@@ -177,8 +177,6 @@
   <ItemGroup>
     <Compile Include="Api\ApiHost.cs" />
     <Compile Include="Api\ReceiverController.cs" />
-    <Compile Include="App_Start\StructuremapMvc.cs" />
-    <Compile Include="App_Start\StructuremapWebApi.cs" />
     <Compile Include="DataCollectorConfiguration.cs" />
     <Compile Include="DataCollectorContainer.cs" />
     <Compile Include="DatasourceAggregator.cs" />
@@ -186,10 +184,7 @@
     <Compile Include="Datasources\Simulation\CPUDatasource.cs" />
     <Compile Include="Datasources\Simulation\ItemLoadedDatasource.cs" />
     <Compile Include="Datasources\Simulation\RandomDatasource.cs" />
-    <Compile Include="DependencyResolution\DefaultRegistry.cs" />
-    <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyScope.cs" />
-    <Compile Include="DependencyResolution\StructureMapScopeModule.cs" />
     <Compile Include="DependencyResolution\StructureMapWebApiDependencyResolver.cs" />
     <Compile Include="DependencyResolution\StructureMapWebApiDependencyScope.cs" />
     <Compile Include="ILocalRecordRepository.cs" />
@@ -211,6 +206,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Start\" />
     <Folder Include="Collector\" />
   </ItemGroup>
   <ItemGroup>

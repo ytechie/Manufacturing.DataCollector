@@ -50,15 +50,6 @@ namespace Manufacturing.DataCollector.DependencyResolution {
 
         public IContainer Container { get; set; }
 
-        public IContainer CurrentNestedContainer {
-            get {
-                return (IContainer)HttpContext.Items[NestedContainerKey];
-            }
-            set {
-                HttpContext.Items[NestedContainerKey] = value;
-            }
-        }
-
         #endregion
 
         #region Properties
@@ -74,25 +65,9 @@ namespace Manufacturing.DataCollector.DependencyResolution {
 
         #region Public Methods and Operators
 
-        public void CreateNestedContainer() {
-            if (CurrentNestedContainer != null) {
-                return;
-            }
-            CurrentNestedContainer = Container.GetNestedContainer();
-        }
 
         public void Dispose() {
-            if (CurrentNestedContainer != null) {
-                CurrentNestedContainer.Dispose();
-            }
-
             Container.Dispose();
-        }
-
-        public void DisposeNestedContainer() {
-            if (CurrentNestedContainer != null) {
-                CurrentNestedContainer.Dispose();
-            }
         }
 
         public IEnumerable<object> GetServices(Type serviceType) {
@@ -104,19 +79,19 @@ namespace Manufacturing.DataCollector.DependencyResolution {
         #region Methods
 
         protected override IEnumerable<object> DoGetAllInstances(Type serviceType) {
-            return (CurrentNestedContainer ?? Container).GetAllInstances(serviceType).Cast<object>();
+            return Container.GetAllInstances(serviceType).Cast<object>();
         }
 
         protected override object DoGetInstance(Type serviceType, string key) {
-            IContainer container = (CurrentNestedContainer ?? Container);
+            //IContainer container = (CurrentNestedContainer ?? Container);
 
             if (string.IsNullOrEmpty(key)) {
                 return serviceType.IsAbstract || serviceType.IsInterface
-                    ? container.TryGetInstance(serviceType)
-                    : container.GetInstance(serviceType);
+                    ? Container.TryGetInstance(serviceType)
+                    : Container.GetInstance(serviceType);
             }
 
-            return container.GetInstance(serviceType, key);
+            return Container.GetInstance(serviceType, key);
         }
 
         #endregion
