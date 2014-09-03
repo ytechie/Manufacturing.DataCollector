@@ -15,18 +15,19 @@ namespace Manufacturing.DataCollector
             {
                 y.TheCallingAssembly();
                 y.ExcludeType<DatasourceAggregator>();
+                
                 y.AddAllTypesOf<IDatasource>();
                 y.SingleImplementationsOfInterface().OnAddedPluginTypes(z => z.LifecycleIs(new TransientLifecycle()));
+
+                x.For<ILocalRecordRepository>().Use<MsmqRecordRepository>().AlwaysUnique();
             }));
+
+            container.Configure(x => x.For<DatasourceAggregator>().Add<DatasourceAggregator>());
         }
 
         public static IEnumerable<IDatasource> GetAllDatasources(IContainer container)
         {
             return container.GetAllInstances<IDatasource>();
-        }
-
-        public void Register(System.ComponentModel.IContainer container)
-        {
         }
     }
 }
