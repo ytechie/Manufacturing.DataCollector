@@ -187,6 +187,7 @@
     <Compile Include="DependencyResolution\StructureMapDependencyScope.cs" />
     <Compile Include="DependencyResolution\StructureMapWebApiDependencyResolver.cs" />
     <Compile Include="DependencyResolution\StructureMapWebApiDependencyScope.cs" />
+    <Compile Include="IDatasource.cs" />
     <Compile Include="ILocalRecordRepository.cs" />
     <Compile Include="MsmqRecordRepository.cs" />
     <Compile Include="Service1.cs">
