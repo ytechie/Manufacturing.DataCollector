@@ -12,7 +12,29 @@ There are a few [simulation datasources](https://github.com/ytechie/Manufacturin
 
 By default, data is stored in a local MS Message Queue, which is available on any Windows machine, and can be configured for high availability with clustering.
 
-## Custom Adapters
+## Background
+
+Many of the technologies used in today’s manufacturing facility are based on technologies that were defined decades ago. For example, the Modbus protocol, a de facto standard for manufacturing, was originally published in 1979, and remains relatively unchanged today.
+ 
+Manufacturing environments have a wide variety of data sources from varying layers. The high-level logical layers are listed below along with common implementations.
+
+1. Physical Layer
+	* 0-10v
+	* 4-20mA
+	* Pulse
+2. Link Layer
+	* RS-422 Serial
+	* RS-485 Serial
+3. Transport Layer
+	* Modbus
+	* OPC
+4. Application Layer
+	* Modbus TCP
+	* XML
+
+Traditionally, ISV's have built software that is installed within a manufacturing facility. This software services as the central point of collection, storage, and all data processing. Historically, nearly all of this data was available locally only.
+
+This manufacturing framework architecture is designed to insert pluggable adapters that translate protocols from the application layer to a common format. Outside the scope of this architecture is a strategy for converting from lower layers to the application layer. There are numerous industry standard devices commonly available to accomplish this task.
 
 Custom adapters can be created for **anything**. Simply implement `IDatasource`. You could create adapters for sensors, historians, or any other source of data.
 
