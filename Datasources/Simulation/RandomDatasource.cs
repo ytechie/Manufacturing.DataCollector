@@ -8,21 +8,19 @@ namespace Manufacturing.DataCollector.Datasources.Simulation
     {
         public event EventHandler<DataReceivedEventArgs<decimal>> DataReceived;
 
-        private readonly ITimer _timer;
         private readonly double _min;
         private readonly double _max;
-        private readonly int _deviceID;
 
-        public RandomDatasource(ITimer timer, DataCollectorConfiguration configuration)
+        public int Id { get; set; }
+        public string Schedule { get; set; }
+
+        public RandomDatasource(DataCollectorConfiguration configuration)
         {
-            _timer = timer;
-
-            _timer.Tick += (sender, args) => StartRead();
-            _timer.Change(TimeSpan.Zero, TimeSpan.FromSeconds(configuration.RandomDatasourceIntervalSeconds));
-
             _min = (double)configuration.RandomDatasourceMin;
             _max = (double)configuration.RandomDatasourceMax;
-            _deviceID = configuration.RandomDatasourceDeviceID;
+
+            Id = configuration.RandomDatasourceDeviceID;
+            Schedule = configuration.RandomDatasourceSchedule;//configuration.RandomDatasourceIntervalSeconds
         }
         
         public void StartRead()
@@ -37,7 +35,7 @@ namespace Manufacturing.DataCollector.Datasources.Simulation
         {
             var evt = DataReceived;
             if(evt != null)
-                evt(this, new DataReceivedEventArgs<decimal>(value, _deviceID, DateTime.UtcNow));
+                evt(this, new DataReceivedEventArgs<decimal>(value, Id, DateTime.UtcNow));
         }
     }
 }

@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bootstrapper">
       <HintPath>..\Manufacturing.DevRunner\packages\Bootstrapper.2.0.3.13\lib\Net40\Bootstrapper.dll</HintPath>
@@ -41,6 +44,9 @@
     <Reference Include="Bootstrapper.StructureMap">
       <HintPath>..\Manufacturing.DevRunner\packages\Bootstrapper.StructureMap.2.0.3.13\lib\Net40\Bootstrapper.StructureMap.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging">
+      <HintPath>..\Manufacturing.DevRunner\packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
     </Reference>
     <Reference Include="CommonServiceLocator.StructureMapAdapter.Unofficial">
       <HintPath>..\Manufacturing.DevRunner\packages\CommonServiceLocator.StructureMapAdapter.Unofficial.3.0.4.125\lib\Net40\CommonServiceLocator.StructureMapAdapter.Unofficial.dll</HintPath>
@@ -84,6 +90,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\Manufacturing.DevRunner\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Quartz">
+      <HintPath>..\Manufacturing.DevRunner\packages\Quartz.2.2.4\lib\net40\Quartz.dll</HintPath>
     </Reference>
     <Reference Include="StructureMap">
       <HintPath>..\Manufacturing.DevRunner\packages\structuremap.3.1.0.133\lib\net40\StructureMap.dll</HintPath>
@@ -180,6 +189,8 @@
     <Compile Include="DataCollectorConfiguration.cs" />
     <Compile Include="DataCollectorContainer.cs" />
     <Compile Include="DatasourceAggregator.cs" />
+    <Compile Include="Datasources\DatasourceReadResultHandler.cs" />
+    <Compile Include="Datasources\DatasourceReadJob.cs" />
     <Compile Include="Datasources\DatasourceScheduler.cs" />
     <Compile Include="Datasources\Simulation\CPUDatasource.cs" />
     <Compile Include="Datasources\Simulation\ItemLoadedDatasource.cs" />

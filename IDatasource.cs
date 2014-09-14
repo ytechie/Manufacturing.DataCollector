@@ -8,5 +8,8 @@ namespace Manufacturing.DataCollector
         event EventHandler<DataReceivedEventArgs<decimal>> DataReceived;
 
         void StartRead();
+
+        int Id { get; set; }
+        string Schedule { get; set; }
     }
 }

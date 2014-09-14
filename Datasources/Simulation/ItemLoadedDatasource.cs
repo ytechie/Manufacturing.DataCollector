@@ -16,6 +16,9 @@ namespace Manufacturing.DataCollector.Datasources.Simulation
         private readonly double _maxitems;
         private Random _rand;
 
+        public int Id { get; set; }
+        public string Schedule {  get; set; }
+
         public ItemLoadedDatasource(ITimer timer, DataCollectorConfiguration configuration)
         {
             _timer = timer;
@@ -29,7 +32,8 @@ namespace Manufacturing.DataCollector.Datasources.Simulation
 
             _timer.Change(TimeSpan.Zero, TimeSpan.FromSeconds(_rate)
                 + TimeSpan.FromSeconds((_rand.NextDouble() - 0.5) * _variation));
-            _deviceid = configuration.ItemProducedDeviceID;
+
+            Id = configuration.ItemProducedDeviceID;
         }
         
         public void StartRead()
