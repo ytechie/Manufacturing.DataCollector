@@ -8,12 +8,17 @@ namespace Manufacturing.DataCollector
     /// <summary>
     ///     Watches a set of IDatasource instances and aggregates their events
     /// </summary>
+    /// 
+    /// This isnt included in the flow right now, as dont think we want each individual datasource
+    /// result to be exposed, as it causes double recordings
+    /// Not sure if this is neally needed for anything going forward or was just initial mechanism to
+    /// do reads before scheduling was implemented.  So leaving it around for now.
     public class DatasourceAggregator : IDatasource
     {
         private readonly List<IDatasource> _datasources;
 
         public int Id { get; set; }
-        public string Schedule { get; set; }
+        public string[] Schedule { get; set; }
 
         public DatasourceAggregator(IEnumerable<IDatasource> datasources)
         {

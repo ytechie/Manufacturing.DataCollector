@@ -33,7 +33,7 @@ namespace Manufacturing.DataCollector.Datasources
                 Timestamp = dataReceivedEventArgs.Timestamp,
                 DatasourceId = dataReceivedEventArgs.DeviceID,
             };
-            record.SetDecimalValue(dataReceivedEventArgs.Value);
+            record.SetDecimalValue(dataReceivedEventArgs.Value);            
             _recordRepository.Push(record);
         }
     }

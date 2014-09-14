@@ -7,15 +7,13 @@
 
         #region Datasource options that should probably be refactored somewhere else
 
-        public double RandomDatasourceIntervalSeconds { get; set; }
         public decimal RandomDatasourceMin { get; set; }
         public decimal RandomDatasourceMax { get; set; }
         public int RandomDatasourceDeviceID { get; set; }
-        public string RandomDatasourceSchedule { get; set; }
+        public string[] RandomDatasourceSchedule { get; set; }
 
-        public double CPUSampleRateSeconds { get; set; }
         public int CPUDeviceID { get; set; }
-        public string CPUDeviceSchedule { get; set; }
+        public string[] CPUDeviceSchedule { get; set; }
 
         public double ItemProducedSampleRate { get; set; }
         public double ItemProducedTimeVariation { get; set; }
