@@ -1,0 +1,22 @@
+{
+	"Port": 1234,
+	"MsmqQueueName": "DataCollectorQueue",
+
+	"RandomDatasourceIntervalSeconds": 0.01,
+	"RandomDatasourceMin": 0,
+	"RandomDatasourceMax": 100,
+	"RandomDatasourceDeviceID": "12",
+
+	"CPUSampleRateSeconds": 0.1,
+	"CPUDeviceID": "11",
+
+	"ItemProducedSampleRate": 45.0,
+	"ItemProducedTimeVariation" : 5.0,
+	"ItemProducedMax" : 100.0,
+	"ItemProducedDeviceID" : "13",
+	
+	"MaterialSampleRate": 90.0,
+	"MaterialTimeVariation" : 5.0,
+	"MaterialMax" : 500.0,
+	"MaterialDeviceID" : "14",
+}
