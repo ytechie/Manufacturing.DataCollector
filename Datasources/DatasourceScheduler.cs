@@ -15,17 +15,15 @@ namespace Manufacturing.DataCollector.Datasources
     {
         private static readonly ILog Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-        private DatasourceAggregator _aggregator;
         private IDatasourceReadResultHandler _readResultHandler;
         private IScheduler _scheduler;
         private IEnumerable<IDatasource> _datasources;
         private bool _disposed;
 
-        public DatasourceScheduler(IEnumerable<IDatasource> datasources, DatasourceAggregator aggregator, IDatasourceReadResultHandler readResultHandler)
+        public DatasourceScheduler(IEnumerable<IDatasource> datasources, IDatasourceReadResultHandler readResultHandler)
         {
             _scheduler = StdSchedulerFactory.GetDefaultScheduler();
             _datasources = datasources;
-            _aggregator = aggregator;
             _readResultHandler = readResultHandler;
         }
 
@@ -34,24 +32,25 @@ namespace Manufacturing.DataCollector.Datasources
             Log.Info("Starting Datasource Scheduler");
 
             // Go thru our datasources and schedule them based on their specified schedule
-            foreach (var ds in _datasources.Where(ds => !String.IsNullOrWhiteSpace(ds.Schedule)))
+            foreach (var ds in _datasources.Where(ds => ds.Schedule != null && ds.Schedule.Length > 0))
             {
-                IJobDetail job = JobBuilder.Create<DatasourceReadJob>()
-                    .WithIdentity("dsjob"+ds.Id, "datasources")
+                // Thought could create a single job with multiple triggers, but Quartz doesn't seem to like that
+                foreach (var schedStr in ds.Schedule)
+                {
+                    IJobDetail job = JobBuilder.Create<DatasourceReadJob>()
+                    .WithIdentity("dsjob" + ds.Id + " " + schedStr, "datasources")
                     .Build();
 
-                job.JobDataMap.Add("Datasource", ds); // no method signature on JobBuilder allowing us to inject the ds there
+                    job.JobDataMap.Add("Datasource", ds); // no method signature on JobBuilder allowing us to inject the ds there
 
-                // Later parse the schedule string from config and apply it to trigger
-                ITrigger trigger = TriggerBuilder.Create()
-                    .WithIdentity("dstrigger" + ds.Id, "datasources")
-                    .StartNow()
-                    .WithSimpleSchedule(x => x
-                        .WithIntervalInSeconds(10)
-                        .RepeatForever())
-                    .Build();
+                    ITrigger trigger = TriggerBuilder.Create()
+                        .WithIdentity("dstrigger" + ds.Id + " " + schedStr, "datasources")
+                        .StartNow()
+                        .WithCronSchedule(schedStr)
+                        .Build();
 
-                _scheduler.ScheduleJob(job, trigger);
+                    _scheduler.ScheduleJob(job, trigger);
+                }
             }
 
             // Hook up the datasources to the handler (this doesnt quite seem like the right place for this...)
@@ -59,9 +58,6 @@ namespace Manufacturing.DataCollector.Datasources
             {
                 ds.DataReceived += _readResultHandler.OnDataReceived;
             }
-
-            // This isnt being included in the scheduler at this point...
-            _aggregator.DataReceived += _readResultHandler.OnDataReceived;
 
             // Handler is hooked up, start the scheduler
             _scheduler.Start();            

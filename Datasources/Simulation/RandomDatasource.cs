@@ -12,7 +12,7 @@ namespace Manufacturing.DataCollector.Datasources.Simulation
         private readonly double _max;
 
         public int Id { get; set; }
-        public string Schedule { get; set; }
+        public string[] Schedule { get; set; }
 
         public RandomDatasource(DataCollectorConfiguration configuration)
         {

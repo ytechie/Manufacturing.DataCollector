@@ -1,24 +1,22 @@
 {
-	"Port": 1234,
-	"MsmqQueueName": "DataCollectorQueue",
+    "Port": 1234,
+    "MsmqQueueName": "DataCollectorQueue",
 
-	"RandomDatasourceIntervalSeconds": 0.01,
-	"RandomDatasourceMin": 0,
-	"RandomDatasourceMax": 100,
-	"RandomDatasourceDeviceID": "12",
-    "RandomDatasourceSchedule": "XYZ",
+    "RandomDatasourceMin": 0,
+    "RandomDatasourceMax": 100,
+    "RandomDatasourceDeviceID": "12",
+    "RandomDatasourceSchedule": [ "0/1 * * * * ?" ], // every second
 
-	"CPUSampleRateSeconds": 0.1,
-	"CPUDeviceID": "11",
-    "CPUDeviceSchedule": "XYX",
+    "CPUDeviceID": "11",
+    "CPUDeviceSchedule": [ "0/2 0/2 * * * ?", "1/2 1/2 * * * ?" ], // every even second on even minutes, every odd second on odd minutes
 
-	"ItemProducedSampleRate": 45.0,
-	"ItemProducedTimeVariation" : 5.0,
-	"ItemProducedMax" : 100.0,
-	"ItemProducedDeviceID" : "13",
-	
-	"MaterialSampleRate": 90.0,
-	"MaterialTimeVariation" : 5.0,
-	"MaterialMax" : 500.0,
-	"MaterialDeviceID" : "14",
+    "ItemProducedSampleRate": 45.0,
+    "ItemProducedTimeVariation": 5.0,
+    "ItemProducedMax": 100.0,
+    "ItemProducedDeviceID": "13",
+
+    "MaterialSampleRate": 90.0,
+    "MaterialTimeVariation": 5.0,
+    "MaterialMax": 500.0,
+    "MaterialDeviceID": "14",
 }

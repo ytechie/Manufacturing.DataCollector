@@ -10,6 +10,6 @@ namespace Manufacturing.DataCollector
         void StartRead();
 
         int Id { get; set; }
-        string Schedule { get; set; }
+        string[] Schedule { get; set; }
     }
 }

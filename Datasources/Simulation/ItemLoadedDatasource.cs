@@ -11,13 +11,11 @@ namespace Manufacturing.DataCollector.Datasources.Simulation
         private readonly ITimer _timer;
         private readonly double _variation;
         private readonly double _rate;
-        private readonly int _deviceid;
-
         private readonly double _maxitems;
         private Random _rand;
 
         public int Id { get; set; }
-        public string Schedule {  get; set; }
+        public string[] Schedule {  get; set; }
 
         public ItemLoadedDatasource(ITimer timer, DataCollectorConfiguration configuration)
         {
@@ -50,7 +48,7 @@ namespace Manufacturing.DataCollector.Datasources.Simulation
         {
             var evt = DataReceived;
             if(evt != null)
-                evt(this, new DataReceivedEventArgs<decimal>(value, _deviceid, DateTime.UtcNow));
+                evt(this, new DataReceivedEventArgs<decimal>(value, Id, DateTime.UtcNow));
         }
     }
 }

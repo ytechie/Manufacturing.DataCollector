@@ -16,7 +16,7 @@ namespace Manufacturing.DataCollector.Datasources.Simulation
 
 
         public int Id { get; set; }
-        public string Schedule { get; set; }
+        public string[] Schedule { get; set; }
 
         private static PerformanceCounter cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
         public CPUDatasource(DataCollectorConfiguration configuration)
