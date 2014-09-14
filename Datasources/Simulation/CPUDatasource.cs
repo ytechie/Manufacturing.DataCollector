@@ -12,19 +12,17 @@ namespace Manufacturing.DataCollector.Datasources.Simulation
         private readonly ITimer _timer;
         private readonly double _min;
         private readonly double _max;
-        private readonly int _deviceid;
         private readonly double _CPUSampleRate;
 
-        private static PerformanceCounter cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
-        public CPUDatasource(ITimer timer, DataCollectorConfiguration configuration)
-        {
-            _timer = timer;
 
-            _timer.Tick += (sender, args) => StartRead();
-            _timer.Change(TimeSpan.Zero, TimeSpan.FromSeconds(configuration.CPUSampleRateSeconds));
-            _deviceid = configuration.CPUDeviceID;
-        
-            
+        public int Id { get; set; }
+        public string Schedule { get; set; }
+
+        private static PerformanceCounter cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+        public CPUDatasource(DataCollectorConfiguration configuration)
+        {
+            Id = configuration.CPUDeviceID;
+            Schedule = configuration.CPUDeviceSchedule; //configuration.CPUSampleRateSeconds
         }
         
         public void StartRead()
@@ -39,7 +37,7 @@ namespace Manufacturing.DataCollector.Datasources.Simulation
         {
             var evt = DataReceived;
             if(evt != null)
-                evt(this, new DataReceivedEventArgs<decimal>(value, _deviceid, DateTime.UtcNow));
+                evt(this, new DataReceivedEventArgs<decimal>(value, Id, DateTime.UtcNow));
         }
     }
 }

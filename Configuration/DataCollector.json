@@ -6,9 +6,11 @@
 	"RandomDatasourceMin": 0,
 	"RandomDatasourceMax": 100,
 	"RandomDatasourceDeviceID": "12",
+    "RandomDatasourceSchedule": "XYZ",
 
 	"CPUSampleRateSeconds": 0.1,
 	"CPUDeviceID": "11",
+    "CPUDeviceSchedule": "XYX",
 
 	"ItemProducedSampleRate": 45.0,
 	"ItemProducedTimeVariation" : 5.0,

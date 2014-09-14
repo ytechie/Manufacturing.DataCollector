@@ -12,6 +12,9 @@ namespace Manufacturing.DataCollector
     {
         private readonly List<IDatasource> _datasources;
 
+        public int Id { get; set; }
+        public string Schedule { get; set; }
+
         public DatasourceAggregator(IEnumerable<IDatasource> datasources)
         {
             _datasources = datasources.ToList();
