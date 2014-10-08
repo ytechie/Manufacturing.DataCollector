@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Bootstrap.StructureMap;
-using Manufacturing.Framework.Datasource;
 using StructureMap;
 using StructureMap.Graph;
 using StructureMap.Pipeline;
@@ -19,7 +18,9 @@ namespace Manufacturing.DataCollector
                 y.AddAllTypesOf<IDatasource>();
                 y.SingleImplementationsOfInterface().OnAddedPluginTypes(z => z.LifecycleIs(new TransientLifecycle()));
 
-                x.For<ILocalRecordRepository>().Use<MsmqRecordRepository>().AlwaysUnique();
+                //Switch this to use a persistent MSMQ cache
+                //x.For<ILocalRecordRepository>().Use<MsmqRecordRepository>().AlwaysUnique();
+                x.For<ILocalRecordRepository>().Use<MemoryRecordRepository>().AlwaysUnique();
             }));
 
             container.Configure(x => x.For<DatasourceAggregator>().Add<DatasourceAggregator>());
