@@ -4,7 +4,7 @@
 
     "RandomDatasourceMin": 0,
     "RandomDatasourceMax": 100,
-    "RandomDatasourceDeviceID": "12",
+    "RandomDatasourceDeviceID": "1",
     "RandomDatasourceSchedule": [ "0/1 * * * * ?" ], // every second
 
     "CPUDeviceID": "11",
