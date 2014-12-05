@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using System.ServiceModel;
 using System.Web.Http;
 using System.Web.Http.SelfHost;
 using Bootstrap.Extensions.StartupTasks;
@@ -48,7 +49,22 @@ namespace Manufacturing.DataCollector.Api
 
             // Start listening
             Log.InfoFormat("Starting self-hosted API on {0}", baseAddress.Uri);
-            _server.OpenAsync().Wait();
+            try
+            {
+                _server.OpenAsync().Wait();
+            }
+            catch (AggregateException ae)
+            {
+                if (ae.InnerExceptions[0].GetType() == typeof (AddressAccessDeniedException))
+                {
+                    //People don't follow directions to get this up and running, so this will
+                    //help them fix this exception.
+                    throw new AddressAccessDeniedException("Unable to open the required selfhost port. Please make sure you ran the install script (https://github.com/ytechie/Manufacturing.DevRunner/blob/master/scripts/installDev.ps1)");    
+                }
+
+                throw;
+            }
+            
             Log.InfoFormat("API listening on {0}", baseAddress.Uri);
         }
 
